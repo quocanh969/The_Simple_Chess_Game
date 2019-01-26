@@ -1,0 +1,41 @@
+﻿<Window x:Class="NMCNPM_FinalProject_ChessGame.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NMCNPM_FinalProject_ChessGame"
+        mc:Ignorable="d"
+        Title="Login" Height="768" Width="1366" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" KeyDown="Window_KeyDown">
+    <Grid>
+        <Image Source="Source/background.png"/>
+        <Label x:Name="lblPlayer" FontFamily="KG Dark Side" FontSize="120" VerticalAlignment="Top" HorizontalAlignment="Center">Player 1</Label>
+        <WrapPanel Orientation="Vertical" Width="1366" Height="400" Margin="0,50,150,0">
+            <WrapPanel Width="1440">
+                <Label x:Name="userTextBlock" Height="100" Target="{Binding ElementName=txtUserName}" FontSize="70" FontFamily="KG Dark Side" Width="485" HorizontalContentAlignment="Right">_ID:</Label>
+                <TextBox x:Name="txtUserName" Margin="110,0,0,0" Height="100" Width="830" FontSize="70" FontFamily="KG Dark Side"></TextBox>
+            </WrapPanel>
+            <WrapPanel Margin="0,20,0,0">
+                <Label x:Name="passTextBlock" Height="100" Target="{Binding ElementName=txtPassword}" FontSize="70" FontFamily="KG Dark Side" HorizontalContentAlignment="Right" Width="485">_Password:</Label>
+                <PasswordBox x:Name="txtPassword" Margin="110,0,0,0" Height="100" Width="766" PasswordChar="*" FontSize="70"/>
+            </WrapPanel>
+            <Label x:Name="lblWrongAcc" Visibility="Hidden" Margin="0,10,0,0" HorizontalAlignment="Right" Height="64" FontSize="45" FontFamily="KG Dark Side" Foreground="Red" Width="576" HorizontalContentAlignment="Center" />
+        </WrapPanel>
+        <Grid x:Name="Action" HorizontalAlignment="Center" Width="600" Height="70" Margin="0,600,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition Width="200"></ColumnDefinition>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Button x:Name="BtnCancel" FontFamily="KG Dark Side" FontSize="30" Style="{StaticResource MyCustomButton}" Click="BtnCancel_Click">
+                    Cancel
+                </Button>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Button x:Name="OKBtn" FontFamily="KG Dark Side" FontSize="30" Style="{StaticResource MyCustomButton}" Click="OKBtn_Click">
+                    OK
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

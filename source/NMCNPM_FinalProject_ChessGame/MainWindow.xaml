@@ -1,0 +1,84 @@
+﻿<Window x:Class="NMCNPM_FinalProject_ChessGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vsc="clr-namespace:NMCNPM_FinalProject_ChessGame"
+        xmlns:local="clr-namespace:NMCNPM_FinalProject_ChessGame"
+        mc:Ignorable="d" 
+        Title="ChessGame" Height="768" Width="1366" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Closed="Window_Closed"  Background="{x:Null}" WindowStyle="None">
+    <Grid>
+        <Image Source="Source/background.png"/>
+
+        <Grid Margin="100,60,100,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="250"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Canvas Grid.Row="0" HorizontalAlignment="Center" Width="1080">
+                <Image Source="Source/logo.png" Height="350" Width="350" Canvas.Left="370" Canvas.Top="-30"/>
+            </Canvas>
+            <!---<Canvas Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="500" Height="200">
+                <Image Source="Source/MainScreen/King (Main screen).png" Width="70" Height="70" RenderTransformOrigin="0.5,0.5" Canvas.Left="14" Canvas.Top="12">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-27.435"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <Border BorderBrush="Black" BorderThickness="5" Width="500" Height="200">
+                    <TextBlock Text="CHESS" Margin="0,30,0,0" FontFamily="KG Dark Side" FontSize="110" Padding="20,5" Canvas.ZIndex="0" TextAlignment="Center">
+                    </TextBlock>
+                </Border>
+            </Canvas>-->
+            <Grid Grid.Row="1" Margin="20,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="450"></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Button x:Name="btnNew" Height="80" FontFamily="KG Dark Side" FontSize="50" VerticalAlignment="Top" Style="{StaticResource MainButton}" Click="btnNew_Click">
+                        <Button.Background>
+                            <ImageBrush/>
+                        </Button.Background> NEW
+                    </Button>
+                    <Button x:Name="btnRank" Height="80" FontFamily="KG Dark Side" FontSize="50" VerticalAlignment="Center" Style="{StaticResource MainButton}" Click="btnRank_Click">
+                        <Button.Background>
+                            <ImageBrush/>
+                        </Button.Background> RANK
+                    </Button>
+                    <Button x:Name="btnSetting" Height="80" FontFamily="KG Dark Side" FontSize="50" VerticalAlignment="Bottom" Style="{StaticResource MainButton}" Click="btnSetting_Click">
+                        <Button.Background>
+                            <ImageBrush/>
+                        </Button.Background> SETTING
+                    </Button>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Image Source="Source/MainScreen/Queen (Main screen).png" Width="100" Height="100"/>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <Button x:Name="btnLoad" Height="80" FontFamily="KG Dark Side" FontSize="50" VerticalAlignment="Top" Style="{StaticResource MainButton}" Click="btnLoad_Click">
+                        <Button.Background>
+                            <ImageBrush/>
+                        </Button.Background> LOAD
+                    </Button>
+                    <Button x:Name="btnRegister" Height="80" FontFamily="KG Dark Side" FontSize="50" VerticalAlignment="Center" Style="{StaticResource MainButton}" Click="btnRegister_Click">
+                        <Button.Background>
+                            <ImageBrush/>
+                        </Button.Background> REGISTER
+                    </Button>
+                    <Button x:Name="btnQuit" Height="80" FontFamily="KG Dark Side" FontSize="50" VerticalAlignment="Bottom" Style="{StaticResource MainButton}" Click="btnQuit_Click">
+                        <Button.Background>
+                            <ImageBrush/>
+                        </Button.Background> QUIT
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
+        <vsc:Playground x:Name="UCPlayground" Width="auto" Height="auto" Visibility="Hidden"></vsc:Playground>
+    </Grid>
+</Window>

@@ -1,0 +1,40 @@
+﻿<Window x:Class="NMCNPM_FinalProject_ChessGame.Setting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NMCNPM_FinalProject_ChessGame"
+        mc:Ignorable="d" Loaded="Window_Loaded_1"
+        Title="Setting" Height="768" Width="1366" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Closed="Window_Closed">
+    <Grid>
+        <Image Source="Source/background.png"/>
+        <Button Width="100" Height="100" Margin="0,0,1256,0" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MyAudioButton}" Click="Button_Click">
+            <Image Source="Source/PlayingScreen/Back_button.png"/>
+        </Button>
+        <Label Height="180" Margin="0,0,0,550" HorizontalAlignment="Center" FontFamily="KG Dark Side" FontSize="100" BorderThickness="3" BorderBrush="Black">SETTING</Label>
+        <WrapPanel  Orientation="Vertical" Margin="0,250,0,0">
+
+            <Grid x:Name="AniAudio" Width="1271" Height="150">
+                <Label x:Name="lblAniAudio" FontSize="50" FontFamily="KG Dark Side" Margin="46,0,665,0">Animation Audio:</Label>
+                <Button x:Name="btnAniAudio" Margin="636,-10,465,60" Style="{StaticResource MyAudioButton}" Height="100" Click="btnAniAudio_Click">
+                    <Image x:Name="imgAniAudio" Source="Source/MainScreen/Volume_On.png"/>
+                </Button>
+
+            </Grid>
+            <Grid>
+                <Label x:Name="lblBoardType" FontSize="50" FontFamily="KG Dark Side" Content="Arena :" Margin="350,0,399,0"/>
+                <ComboBox x:Name="cmbTypeOfMatch" Width="200"  Height="80"                         
+                              HorizontalAlignment="Right" Margin="0,8,400,114">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding name}" Height="50" FontSize="40" FontFamily="KG Dark Side">
+                            </TextBlock>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </Grid>
+
+
+        </WrapPanel>
+    </Grid>
+</Window>

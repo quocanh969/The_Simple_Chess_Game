@@ -1,0 +1,43 @@
+﻿<Window x:Class="NMCNPM_FinalProject_ChessGame.Rank"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NMCNPM_FinalProject_ChessGame"
+        mc:Ignorable="d"
+       Title="Rank" Height="768" Width="1366" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen" ScrollViewer.VerticalScrollBarVisibility="Auto" Closed="Window_Closed">
+    <Grid>
+        <Image Source="Source/background.png"/>
+        <Button Width="100" Height="100" Margin="0,20,20,0" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MyAudioButton}" Click="exit_Click">
+            <Image Source="Source/PlayingScreen/Back_button.png"/>
+        </Button>
+        <Label x:Name="Title" Content="RANK" FontSize="100" Height="150" FontFamily="KG Dark Side" Margin="0,20,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                   Margin="0,0,0,-10">
+            <WrapPanel x:Name="Header" Height="80">
+                <Label x:Name="lblRank" Width="200" FontFamily="KG Dark Side" FontSize="50" BorderBrush="#FF080707" BorderThickness="4" HorizontalContentAlignment="Center" Content="RANK"/>
+                <Label x:Name="lblPlayer" Width="300" FontFamily="KG Dark Side" FontSize="50" BorderBrush="#FF080707" BorderThickness="4" HorizontalContentAlignment="Center" Content="PLAYER"/>
+                <Label x:Name="lblScore" Width="400" FontFamily="KG Dark Side" FontSize="50" BorderBrush="#FF080707" BorderThickness="4" HorizontalContentAlignment="Center" Content="SCORE"/>
+            </WrapPanel>
+            <ListView x:Name="listRank" Margin="0,20,0,0" FontFamily="KG Dark Side" FontSize="40" Width="900" Height="500" BorderBrush="{x:Null}"  Background="White" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <ListView.Resources>
+                    <Style TargetType="{x:Type GridViewColumnHeader}">
+                        <Setter Property="Visibility" Value="Collapsed" />
+                    </Style>
+                </ListView.Resources>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <EventSetter Event="UIElement.PreviewMouseLeftButtonDown" Handler="Player_Selected" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="200" DisplayMemberBinding="{Binding rank}" />
+                        <GridViewColumn Width="300" DisplayMemberBinding="{Binding id}" />
+                        <GridViewColumn Width="400" DisplayMemberBinding="{Binding point}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </WrapPanel>
+    </Grid>
+</Window>

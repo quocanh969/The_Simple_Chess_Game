@@ -1,0 +1,62 @@
+﻿<Window x:Class="NMCNPM_FinalProject_ChessGame.PlayerInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NMCNPM_FinalProject_ChessGame"
+        mc:Ignorable="d"
+        Title="Player Infomation" Height="720" Width="1280" WindowStyle="None" MouseDown="Window_MouseDown" Closed="Window_Closed">
+    <Grid>
+        <Image Source="Source/PlayerRankImg/info_bg.jpg" Margin="640,0,0,0"/>
+        <Button x:Name="btnMinimize" HorizontalAlignment="Right" VerticalAlignment="Top"
+                Margin="0,5,50,0" Click="btnMinimize_Click"
+                Width="50" Height="50" Style="{StaticResource MyAudioButton}">
+            <Image Source="Source/MainScreen/Minimize_button.png"/>
+        </Button>
+        <Button x:Name="btnExit" Width="50" Height="50" Margin="0,5,5,0" HorizontalAlignment="Right" VerticalAlignment="Top" Click="btnExit_Click" BorderThickness="0" Style="{StaticResource MyAudioButton}">
+            <Image Source="Source/MainScreen/Exit_button.png"/>
+        </Button>
+        <Grid Margin="30,30,640,30">
+            <Label x:Name="Titl" Content="PLAYER INFO" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="60" FontFamily="KG Dark Side"></Label>
+            <WrapPanel x:Name="Info" Orientation="Vertical"  Height="500" HorizontalAlignment="Center" Margin="75,150,77,102">
+                <WrapPanel x:Name="Name" Height="60" Width="450">
+                    <TextBlock FontSize="30" FontFamily="KG Dark Side" Width="120" >Name:</TextBlock>
+                    <TextBlock x:Name="txtName" Text="asdasd" Margin="10,0,0,0" FontSize="25" FontFamily="KG Dark Side"></TextBlock>
+                </WrapPanel>
+                <WrapPanel x:Name="ID" Height="60" Width="450">
+                    <TextBlock FontSize="25" FontFamily="KG Dark Side" Width="120" TextAlignment="Right" ><Run Text="ID:"/></TextBlock>
+                    <TextBlock x:Name="txtID" Text="asdasd" Margin="10,0,0,0" FontSize="25" FontFamily="KG Dark Side"/>
+                </WrapPanel>
+                <WrapPanel x:Name="Email" Height="70" Width="450">
+                    <TextBlock FontSize="25" FontFamily="KG Dark Side" Width="120" TextAlignment="Right">Email:</TextBlock>
+                    <TextBlock x:Name="txtEmail" Text="asdasd" Margin="10,0,0,0" FontSize="25" FontFamily="KG Dark Side" Width="316"></TextBlock>
+                </WrapPanel>
+                <Grid  x:Name="Record" Height="50" Width="450">
+                    <WrapPanel HorizontalAlignment="Center">
+                        <TextBlock FontSize="35" FontFamily="KG Dark Side">Point:</TextBlock>
+                        <TextBlock x:Name="txtRecord"  Margin="10,0,0,0" FontSize="35" FontFamily="KG Dark Side">10</TextBlock>
+                    </WrapPanel>
+                </Grid>
+                <WrapPanel x:Name="WDL" Height="150" Width="450" >
+                    <WrapPanel x:Name="Win" Width="150" Height="150" Orientation="Vertical">
+                        <Label x:Name="WinText" FontSize="35" FontFamily="KG Dark Side" Height="60" Width="150" HorizontalContentAlignment="Center" Foreground="Lime" Content="WIN"/>
+                        <Label x:Name="WinNum" FontSize="35" FontFamily="KG Dark Side" Height="90" Width="150" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Lime" Content="0"/>
+                    </WrapPanel>
+                    <WrapPanel x:Name="Draw" Width="150" Height="150">
+                        <Label x:Name="DrawText" FontSize="35" FontFamily="KG Dark Side" Height="60" Width="150" HorizontalContentAlignment="Center" Foreground="Gray" Content="DRAW"/>
+                        <Label x:Name="DrawNum" FontSize="35" FontFamily="KG Dark Side" Height="90" Width="150" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Gray" Content="0"/>
+                    </WrapPanel>
+                    <WrapPanel x:Name="Lose" Width="150" Height="150">
+                        <Label x:Name="LoseText" FontSize="35" FontFamily="KG Dark Side" Height="60" Width="150" HorizontalContentAlignment="Center" Foreground="Red" Content="LOSE"/>
+                        <Label x:Name="LoseNum" FontSize="35" FontFamily="KG Dark Side" Height="90" Width="150" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Red" Content="0"/>
+                    </WrapPanel>
+                </WrapPanel>
+            </WrapPanel>
+            <!--<Button VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="150" Height="75" FontSize="30" FontFamily="KG Dark Side" Style="{StaticResource MyCustomButton}">
+                OK
+            </Button>-->
+            
+        </Grid>
+        <Image Source="Source/border.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Grid>
+</Window>
